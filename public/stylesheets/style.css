@@ -1,0 +1,57 @@
+body {
+  font-size: 0.9rem;
+}
+main {
+  margin-top: 45px;
+}
+.container-sm {
+  width: 75%;
+}
+.match-data {
+  background-color: #dee2e6;
+  font-weight: bold;
+  align-items: baseline;
+}
+img {
+  max-width: 1.5rem;
+  max-height: 1.5rem;
+}
+.team-logo {
+  max-width: 10rem;
+  max-height: 10rem;
+}
+.team-name {
+  font-size: 1.5rem;
+}
+.score {
+  font-size: 3rem;
+}
+.btn {
+  --bs-btn-font-size: 0.9rem;
+}
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+td {
+  vertical-align: middle;
+}
+#td-left {
+  text-align: left;
+}
+#td-right {
+  text-align: right;
+}
+#td-center {
+  text-align: center;
+}
+.table-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/*.table-secondary {
+  display: flex;
+  justify-content: flex-end;
+}
+*/

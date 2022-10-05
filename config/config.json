@@ -1,0 +1,33 @@
+{
+  "development": {
+    "username": "master",
+    "password": "p@ssword",
+    "database": "sports_trader",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "privatekey": "priv@tekey"
+  },
+  "test": {
+    "username": "master",
+    "password": "p@ssword",
+    "database": "sports_trader",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "privatekey": "priv@tekey"
+  },
+  "production": {
+    "use_env_variable": "DATABASE_URL",
+    "username": "master",
+    "password": "p@ssword",
+    "database": "sports_trader",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "privatekey": "priv@tekey",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "sports-trader",
+  "version": "1.0.0",
+  "description": "App for sports trading",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./bin/server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yehor Zemzyulin",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.2",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "helmet": "^6.0.0",
+    "http-errors": "^2.0.0",
+    "morgan": "^1.10.0",
+    "node-cron": "^3.0.2",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.23.0"
+  }
+}

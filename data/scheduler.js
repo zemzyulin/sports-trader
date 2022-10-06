@@ -26,7 +26,7 @@ function task2() {
 // TASK 3: Update fixtures staus: from upcoming to finished
 // Execute every day, every 30 minutes
 function task3() {
-    cron.schedule('0,30 * * * *', () => {
+    cron.schedule('5,35 * * * *', () => {
         console.log('Checking starting times... ');
         dataFetch.updateFixtureStatus();
     }, {

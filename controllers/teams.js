@@ -10,7 +10,7 @@ module.exports = {
         }
     },
     // add team: expects array of objects (teams) in API SPORTS format
-    async add(req, res) {
+    async bulkAdd(req, res) {
         try {
             // filter teams to remove duplicates
             let teamIds = [];

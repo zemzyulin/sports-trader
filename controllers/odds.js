@@ -11,7 +11,7 @@ module.exports = {
         }
     },
     
-    // add odds: expects JSON object with a single instance of odds
+    // add odds: expects array of JSON objects (instances of odds)
     /*
     {
         "moHome": 2.85,
@@ -22,12 +22,17 @@ module.exports = {
         "bookieId": 6
     }
     */
-    async add(req, res) {
+    async bulkAdd(req, res) {
         try {
-            let result = await dataFetch.addOdds(req.body);
-            return res.status(200).send(result);
+            let oddsArray = req.body;
+            let counter = 0;
+            for (let i = 0; i < oddsArray.length; i++) {
+                let element = await dataFetch.addOdds(oddsArray[i]);
+                if (element) { counter++ }
+            }
+            res.status(200).send(`Odds added: ${counter}`)
         } catch (error) {
-            return res.status(400).send(error);
+            res.status(400).send(error);
         }
     },
     async delete(req, res) {

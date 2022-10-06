@@ -16,7 +16,6 @@ router.get('/', async (req, res) => {
         res.status(400).send(error);
     }
 });
-router.post('/', controller.add);
 router.get('/upcoming', async (req, res) => {
     try {
         let results = await controller.list();
@@ -55,7 +54,7 @@ router.get('/:id', async (req, res) => {
             dates: datesArray
         })
     } catch (error) {
-        console.log(error);
+        return res.status(400).send(error);
     }
 });
 router.delete('/:id', controller.delete);

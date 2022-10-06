@@ -10,7 +10,7 @@ module.exports = {
         }
     },
     // add league: expects array of objects (leagues) in API SPORTS format
-    async add(req, res) {
+    async bulkAdd(req, res) {
         try {
             let leaguesArray = [];
             await req.body.forEach(el => {

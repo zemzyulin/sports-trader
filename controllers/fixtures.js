@@ -27,7 +27,7 @@ module.exports = {
         }
     },
     
-    // add fixture: expects JSON object with a single instance of fixture
+    // add fixture: expects array of JSON objects (instances of fixture)
     /*
     {
         "idApi": 854617,
@@ -41,10 +41,16 @@ module.exports = {
         "watching": true
     }
     */
-    async add(req, res) {
+    async bulkAdd(req, res) {
         try {
-            let result = await dataFetch.addFixture(req.body);
-            return res.status(200).send(result);
+            let fixturesArray = req.body;
+            console.log(fixturesArray);
+            let counter = 0;
+            for (let i = 0; i < fixturesArray.length; i++) {
+                let fixture = await dataFetch.addFixture(fixturesArray[i]);
+                if (fixture) { counter++ }
+            }
+            res.status(200).send(`Fixtures added: ${counter}`);
         } catch (error) {
             return res.status(400).send(error);
         }

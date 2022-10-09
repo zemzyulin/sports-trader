@@ -1,3 +1,4 @@
+'use strict';
 const League = require('../models/').League;
 const Team = require('../models/').Team;
 const Fixture = require('../models/').Fixture;
@@ -56,7 +57,7 @@ module.exports = {
                     fixturesArray[i].homeTeamId = homeTeamId.dataValues.id;
                     fixturesArray[i].awayTeamId = awayTeamId.dataValues.id;
                     fixturesArray[i].leagueId = leagueId.dataValues.id;
-                };
+                }
             
             // 4. Add data to DB
             let counter = 0;

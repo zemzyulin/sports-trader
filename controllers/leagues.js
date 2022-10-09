@@ -1,3 +1,4 @@
+'use strict';
 const League = require('../models/').League;
 
 module.exports = {

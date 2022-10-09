@@ -1,3 +1,4 @@
+'use strict';
 const Bookie = require('../models/').Bookie;
 
 module.exports = {
@@ -24,7 +25,7 @@ module.exports = {
     async delete(req, res) {
         try {
             const bookie = await Bookie.findByPk(req.params.id);
-            if (!team) {
+            if (!bookie) {
                 return res.status(404).send({ message: 'Bookie not found' });
             }
             await bookie.destroy();

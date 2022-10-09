@@ -1,3 +1,4 @@
+'use strict';
 const Fixture = require('../models/').Fixture;
 const Odds = require('../models/').Odds;
 const Team = require('../models/').Team;

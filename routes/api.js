@@ -1,3 +1,4 @@
+'use strict';
 let express = require('express');
 let router = express.Router();
 
@@ -6,6 +7,7 @@ let oddsController = require('../controllers/odds');
 let teamController = require('../controllers/teams');
 let leagueController = require('../controllers/leagues');
 let bookieController = require('../controllers/bookies');
+let dataFetch = require('../data/data-fetch');
 
 
 // additional routes for admin
@@ -40,6 +42,32 @@ router.post('/teams', teamController.bulkAdd);
 router.post('/leagues', leagueController.bulkAdd);
 // bookies
 router.post('/bookies', bookieController.bulkAdd);
+
+// manually fetch data
+router.get('/fetch/fixtures', async (req, res) => {
+    try {
+        await dataFetch.fetchFixtures();
+        res.status(200).send("Fixtures fetched");
+    } catch(error) {
+        res.status(400).send(error);
+    }   
+});
+router.get('/fetch/odds', async (req, res) => {
+    try {
+        await dataFetch.fetchOdds();
+        res.status(200).send("Odds fetched");
+    } catch(error) {
+        res.status(400).send(error);
+    }   
+});
+router.get('/fetch/update', async (req, res) => {
+    try {
+        await dataFetch.updateFixtureStatus();
+        res.status(200).send("Fixtures updated");
+    } catch(error) {
+        res.status(400).send(error);
+    }   
+});
 
 
 module.exports = router;

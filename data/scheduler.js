@@ -1,3 +1,4 @@
+'use strict';
 const cron = require('node-cron');
 const dataFetch = require('./data-fetch');
 

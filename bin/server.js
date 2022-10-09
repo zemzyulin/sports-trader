@@ -1,5 +1,5 @@
+'use strict';
 const http = require('http');
-const { EventEmitter } = require('stream');
 const app = require('../app');
 
 const PORT = normalizePort(process.env.PORT || '3001');

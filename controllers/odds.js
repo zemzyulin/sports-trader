@@ -1,3 +1,4 @@
+'use strict';
 const Odds = require('../models/').Odds;
 const dataFetch = require('../data/data-fetch');
 

@@ -1,3 +1,4 @@
+'use strict';
 const Team = require('../models/').Team;
 
 module.exports = {
